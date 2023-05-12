@@ -6,3 +6,10 @@ C:\Library\projects\C#\minesweeper\obj\Debug\minesweeper.csproj.SuggestedBinding
 C:\Library\projects\C#\minesweeper\obj\Debug\minesweeper.csproj.CoreCompileInputs.cache
 C:\Library\projects\C#\minesweeper\obj\Debug\minesweeper.exe
 C:\Library\projects\C#\minesweeper\obj\Debug\minesweeper.pdb
+G:\Dev Stuff\Minesweeper\bin\Debug\minesweeper.exe.config
+G:\Dev Stuff\Minesweeper\bin\Debug\minesweeper.exe
+G:\Dev Stuff\Minesweeper\bin\Debug\minesweeper.pdb
+G:\Dev Stuff\Minesweeper\obj\Debug\minesweeper.csproj.AssemblyReference.cache
+G:\Dev Stuff\Minesweeper\obj\Debug\minesweeper.csproj.CoreCompileInputs.cache
+G:\Dev Stuff\Minesweeper\obj\Debug\minesweeper.exe
+G:\Dev Stuff\Minesweeper\obj\Debug\minesweeper.pdb

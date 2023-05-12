@@ -8,17 +8,17 @@ namespace minesweeper
 {
     public class cursorHandler
     {
-        vector2 mapSize;
-        vector2 vector0;
+        Vector2 mapSize;
+        Vector2 vector0;
         bool wrapping;
-        public cursorHandler(vector2 mapSize, vector2 vector0, bool wrapping)
+        public cursorHandler(Vector2 mapSize, Vector2 vector0, bool wrapping)
         {
             this.mapSize = mapSize;
             this.vector0 = vector0;
             this.wrapping = wrapping;
         }
 
-        public vector2 cursorLogic(string input, vector2 position)
+        public Vector2 cursorLogic(string input, Vector2 position)
         {
             if (input == "Left")
             {
@@ -39,7 +39,7 @@ namespace minesweeper
             position = handleWrapping(position, vector0, mapSize, wrapping);
             return position;
         }
-        public vector2 handleWrapping(vector2 pos, vector2 min, vector2 max, bool wraps)
+        public Vector2 handleWrapping(Vector2 pos, Vector2 min, Vector2 max, bool wraps)
         {
             if (wraps)
             {
