@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,23 +19,37 @@ namespace minesweeper
             this.wrapping = wrapping;
         }
 
-        public Vector2 cursorLogic(string input, Vector2 position)
+        public Vector2 cursorLogic(string input, Vector2 position,Map map)
         {
             if (input == "Left")
             {
                 position.modifyX(-1);
+                Program.SP.playSound("move");
             }
             else if (input == "Right")
             {
                 position.modifyX(1);
+                Program.SP.playSound("move");
             }
             else if (input == "Up")
             {
                 position.modifyY(1);
+                Program.SP.playSound("move");
             }
             else if (input == "Down")
             {
                 position.modifyY(-1);
+                Program.SP.playSound("move");
+            }
+            else if (input == "Confirm")
+            {
+                map.revealTile(position);
+                Program.SP.playSound("dig");
+            }
+            else if (input=="Cancel")
+            {
+                map.markTile(position);
+                Program.SP.playSound("flag");
             }
             position = handleWrapping(position, vector0, mapSize, wrapping);
             return position;
@@ -81,7 +96,6 @@ namespace minesweeper
             }
             return pos;
         }
-
 
     }
 }

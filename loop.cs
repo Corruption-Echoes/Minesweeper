@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,29 +10,46 @@ namespace minesweeper
     public class loop
     {
         public Vector2 position;
-        public Vector2 mapSize=new Vector2(10,10);
+        public Vector2 mapSize=new Vector2(15,15);
         public InputHandler inputHandler;
         public cursorHandler cursorHandler;
-        public int mineCount = 10;
+        public int mineCount = 15;
         bool wrapping = false;
         Map map;
         public void mainLoop()
         {
-            position = new Vector2(5, 5);
+            Console.CursorVisible = false;
+            Program.SP.playSound("start");
+            position = new Vector2(12, 2);
             inputHandler = new InputHandler();
             inputHandler.initializeMaps();
             cursorHandler=new cursorHandler(mapSize, Vector2.Zero() ,wrapping);
             map = mapGenerator.generateMap(mapSize, mineCount);
             printBoard();
-            while (true)
+            while (!Program.lost && Program.hiddenTiles != 0)
             {
                 string input=inputHandler.getPlayerInput();
-                position=cursorHandler.cursorLogic(input,position);
+                position=cursorHandler.cursorLogic(input,position,map);
                 printBoard();
             }
-        }public void printBoard()
+            Console.WriteLine("");
+            if (Program.lost)
+            {
+                Program.SP.playSound("kaboom");
+                Console.WriteLine("Kaboom! You lost!");
+            }
+            else if (Program.hiddenTiles == 0)
+            {
+                Program.SP.playSound("victory");
+                Console.WriteLine("Victory!");
+            }
+            Console.WriteLine("Play again soon!");
+            Console.ReadLine();
+        }
+        public void printBoard()
         {
             Console.WriteLine("--------------------");
+            Program.hiddenTiles = 0;
             for(int y = mapSize.y-1; y >-1 ; y--)
             {
                 Console.Write("\n");
@@ -39,29 +57,40 @@ namespace minesweeper
                 {
                     if (y == position.y && x == position.x)
                     {
-                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.Write("X ");
                     }
-                    else if (!map.tiles[y][x].isRevealed)
+                    else if (map.tiles[y][x].isRevealed)
                     {
-                        Console.ForegroundColor = ConsoleColor.Blue;
-                        Console.Write(map.tiles[y][x].explosiveCount+" ");
+                        if (map.tiles[y][x].isMine)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.Write("! ");
+                            Program.lost = true;
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                            Console.Write(map.tiles[y][x].explosiveCount + " ");
+                        }
                     }
                     else
                     {
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.Write("0 ");
+                        if (map.tiles[y][x].isMarked)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.Write("^ ");
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.Write("0 ");
+                            if (!map.tiles[y][x].isMine)
+                            {
+                                Program.hiddenTiles++;
+                            }
+                        }
                     }
-                    /*if (i != position.y || j != position.x)
-                    {
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.Write("0 ");
-                    }
-                    else
-                    {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.Write("X ");
-                    }*/
                 }
             }
             Console.ResetColor();

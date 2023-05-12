@@ -12,6 +12,7 @@ namespace minesweeper
 
         public void initializeMaps()
         {
+            ClearConsole();
             keyMaps= new Dictionary<string, string[]>();
             keyMaps["Left"] = new string[] {"LeftArrow","A"};
             keyMaps["Right"] = new string[] { "RightArrow", "D" };
@@ -22,8 +23,9 @@ namespace minesweeper
         }
         public string checkResult(string input)
         {
-            Console.Clear();
-            foreach(string key in keyMaps.Keys)
+            //Console.Clear();
+            ClearConsole();
+            foreach (string key in keyMaps.Keys)
             {
                 if (keyMaps[key].Contains(input)){
                     return key;
@@ -36,6 +38,14 @@ namespace minesweeper
         {
             string intake = checkResult(Console.ReadKey().Key.ToString());
             return intake;
+        }
+
+        public static void ClearConsole()
+        {
+            Console.SetCursorPosition(0, 0);
+            for (int y = 0; y < Console.WindowHeight; y++)
+                Console.Write(new String(' ', Console.WindowWidth));
+            Console.SetCursorPosition(0, 0);
         }
     }
 }

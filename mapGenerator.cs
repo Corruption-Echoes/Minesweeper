@@ -34,7 +34,6 @@ namespace minesweeper
                 if (!slots.Contains(pick))
                 {
                     slots[i] = pick;
-                    Console.WriteLine("Placed a mine at:" + slots[i].x + "/" + slots[i].y);
                 }
                 else
                 {

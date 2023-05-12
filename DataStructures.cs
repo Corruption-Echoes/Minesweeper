@@ -37,6 +37,7 @@ namespace minesweeper
         public bool isMine;
         public Vector2[] neighbours;
         public bool isRevealed;
+        public bool isMarked;
         public int explosiveCount;
         public Map parent;
         public Tile(Vector2 position, bool isMine, Map map)
@@ -47,11 +48,11 @@ namespace minesweeper
             isRevealed = false;
             explosiveCount = 0;
             parent = map;
+            isMarked = false;
         }
         public void setNeighbours(Vector2[] neighbours)
         {
             this.neighbours = neighbours;
-            Console.WriteLine("");
         }
         public void armMine()
         {
@@ -63,23 +64,11 @@ namespace minesweeper
         }
         public void updateExplosiveCount()
         {
-            explosiveCount = getNeighbourMineCount();
+            explosiveCount +=1;
         }
         public void reveal()
         {
             isRevealed = true;
-        }
-        public int getNeighbourMineCount()
-        {
-            int count = 0;
-            foreach(Vector2 t in neighbours)
-            {
-                if (parent.tiles[t.y][t.x].isMine)
-                {
-                    count++;
-                }
-            }
-            return count;
         }
     }
     public struct Map
@@ -98,6 +87,25 @@ namespace minesweeper
             }
             setNeighbours();
         }
+        public void revealTile(Vector2 coord)
+        {
+            tiles[coord.y][coord.x].isRevealed = true;
+            if (!tiles[coord.y][coord.x].isMine&& tiles[coord.y][coord.x].explosiveCount==0)
+            {
+                foreach(Vector2 t in tiles[coord.y][coord.x].neighbours)
+                {
+                    if (!tiles[t.y][t.x].isRevealed)
+                    {
+                        revealTile(t);
+                    }
+                }
+            }
+        }
+        public void markTile(Vector2 coord)
+        {
+            tiles[coord.y][coord.x].isMarked =!tiles[coord.y][coord.x].isMarked;
+        }
+
         public void setMine(Vector2 coord)
         {
             tiles[coord.y][coord.x].armMine();
@@ -112,7 +120,7 @@ namespace minesweeper
             {
                 for (int x = 0; x < tiles[y].Length; x++)
                 {
-                    tiles[y][x].setNeighbours(determineNeighbours(new Vector2(x,y)));
+                    tiles[y][x].setNeighbours(determineNeighbours(new Vector2(y,x)));
                 }
             }
         }
@@ -133,6 +141,7 @@ namespace minesweeper
                     neighbours[5] = (new Vector2(position.y + 1,position.x - 1));
                     neighbours[6] = (new Vector2(position.y + 1,position.x));
                     neighbours[7] = (new Vector2(position.y + 1,position.x + 1));
+                    return neighbours;
                 }
                 else
                 {//It's a Y edged tile -3 to neighbours
@@ -145,12 +154,14 @@ namespace minesweeper
                         neighbours[2] = (new Vector2(position.y + 1,position.x - 1));
                         neighbours[3] = (new Vector2(position.y + 1,position.x));
                         neighbours[4] = (new Vector2(position.y + 1,position.x + 1));
+                        return neighbours;
                     }
                     else
                     {//Otherwise it's the 3 below us
                         neighbours[2] = (new Vector2(position.y - 1,position.x - 1));
                         neighbours[3] = (new Vector2(position.y - 1,position.x));
                         neighbours[4] = (new Vector2(position.y - 1,position.x + 1));
+                        return neighbours;
                     }
                 }
             }//It's an X edged tile, so -3, but is it a Y edged? 
@@ -164,12 +175,14 @@ namespace minesweeper
                     neighbours[2] = (new Vector2(position.y - 1,position.x + 1));
                     neighbours[3] = (new Vector2(position.y,position.x + 1));
                     neighbours[4] = (new Vector2(position.y + 1,position.x + 1));
+                    return neighbours;
                 }
                 else
                 {//Otherwise it's the 3 to our left!
                     neighbours[2] = (new Vector2(position.y + 1,position.x - 1));
                     neighbours[3] = (new Vector2(position.y,position.x - 1));
                     neighbours[4] = (new Vector2(position.y - 1,position.x - 1));
+                    return neighbours;
                 }
             }
             else
@@ -182,12 +195,14 @@ namespace minesweeper
                         neighbours[0] = (new Vector2(position.y + 1,position.x)); //So we get these 3
                         neighbours[1] = (new Vector2(position.y + 1,position.x + 1));
                         neighbours[2] = (new Vector2(position.y,position.x + 1));
+                        return neighbours;
                     }
                     else
                     {//Otherwise we're against the left and top walls
                         neighbours[0] = (new Vector2(position.y,position.x + 1));//So we get these 3
                         neighbours[1] = (new Vector2(position.y - 1,position.x + 1));
                         neighbours[2] = (new Vector2(position.y - 1,position.x));
+                        return neighbours;
                     }
                 }
                 else
@@ -197,17 +212,17 @@ namespace minesweeper
                         neighbours[0] = (new Vector2(position.y + 1,position.x));//So we get these 3
                         neighbours[1] = (new Vector2(position.y + 1,position.x-1));
                         neighbours[2] = (new Vector2(position.y,position.x-1));
+                        return neighbours;
                     }
                     else
                     {//We're in the top right corner
                         neighbours[0] = (new Vector2(position.y - 1,position.x));//So we get these 3
                         neighbours[1] = (new Vector2(position.y - 1,position.x-1));
                         neighbours[2] = (new Vector2(position.y,position.x-1));
+                        return neighbours;
                     }
-
                 }
             }
-            return neighbours;
         }
     }
 }
