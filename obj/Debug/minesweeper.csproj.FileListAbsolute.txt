@@ -1,0 +1,8 @@
+C:\Library\projects\C#\minesweeper\bin\Debug\minesweeper.exe.config
+C:\Library\projects\C#\minesweeper\bin\Debug\minesweeper.exe
+C:\Library\projects\C#\minesweeper\bin\Debug\minesweeper.pdb
+C:\Library\projects\C#\minesweeper\obj\Debug\minesweeper.csproj.AssemblyReference.cache
+C:\Library\projects\C#\minesweeper\obj\Debug\minesweeper.csproj.SuggestedBindingRedirects.cache
+C:\Library\projects\C#\minesweeper\obj\Debug\minesweeper.csproj.CoreCompileInputs.cache
+C:\Library\projects\C#\minesweeper\obj\Debug\minesweeper.exe
+C:\Library\projects\C#\minesweeper\obj\Debug\minesweeper.pdb
