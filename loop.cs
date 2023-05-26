@@ -18,6 +18,14 @@ namespace minesweeper
         Map map;
         public void mainLoop()
         {
+            Console.WriteLine("How large would you like the map to be?(5-50 reccomended)");
+            int mapsize = int.Parse(Console.ReadLine());
+            mapSize = new Vector2(mapsize, mapsize);
+            Console.WriteLine("How many mines would you like us to plant?");
+            mineCount = int.Parse(Console.ReadLine());
+            Console.WriteLine("Alright have fun! You need to place a flag(backspace) on every mine to win! \n(Press any button to continue)");
+            Console.ReadKey();
+            Console.Clear();
             Console.CursorVisible = false;
             Program.SP.playSound("start");
             position = new Vector2(12, 2);
@@ -48,7 +56,7 @@ namespace minesweeper
         }
         public void printBoard()
         {
-            Console.WriteLine("--------------------");
+            Console.SetCursorPosition(0, 0);
             Program.hiddenTiles = 0;
             for(int y = mapSize.y-1; y >-1 ; y--)
             {

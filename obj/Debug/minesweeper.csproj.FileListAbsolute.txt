@@ -13,3 +13,14 @@ G:\Dev Stuff\Minesweeper\obj\Debug\minesweeper.csproj.AssemblyReference.cache
 G:\Dev Stuff\Minesweeper\obj\Debug\minesweeper.csproj.CoreCompileInputs.cache
 G:\Dev Stuff\Minesweeper\obj\Debug\minesweeper.exe
 G:\Dev Stuff\Minesweeper\obj\Debug\minesweeper.pdb
+G:\Dev Stuff\Minesweeper\obj\Debug\minesweeper.exe.manifest
+G:\Dev Stuff\Minesweeper\bin\Debug\minesweeper.exe.manifest
+G:\Dev Stuff\Minesweeper\bin\Debug\minesweeper.application
+G:\Dev Stuff\Minesweeper\obj\Debug\minesweeper.application
+G:\Dev Stuff\Minesweeper\bin\Debug\SoundFiles\Dig.wav
+G:\Dev Stuff\Minesweeper\bin\Debug\SoundFiles\Erhu.wav
+G:\Dev Stuff\Minesweeper\bin\Debug\SoundFiles\Explosion.wav
+G:\Dev Stuff\Minesweeper\bin\Debug\SoundFiles\Flag.wav
+G:\Dev Stuff\Minesweeper\bin\Debug\SoundFiles\Move.wav
+G:\Dev Stuff\Minesweeper\bin\Debug\SoundFiles\Start.wav
+G:\Dev Stuff\Minesweeper\bin\Debug\SoundFiles\Victory.wav

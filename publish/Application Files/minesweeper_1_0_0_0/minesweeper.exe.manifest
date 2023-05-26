@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="minesweeper.exe" version="1.0.0.0" publicKeyToken="439ec42abb48072c" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="minesweeper" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="minesweeper.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="minesweeper.exe" size="14336">
+      <assemblyIdentity name="minesweeper" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>qgRy+kUmlPtoywjalsCswB7UAK7LoWFQZeHB6lGcIgI=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="minesweeper.exe.config" size="189">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>R+Wg8QGvQVHX8T0ta/qbhH1bXkqY0fRnS3wBV3J0bN8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="SoundFiles\Dig.wav" size="140622">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>5kI14nQcZCneEDN1y4M6fb0j9+q/rcXu7/r4PVxpQN8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="SoundFiles\Erhu.wav" size="8379078">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>kWMYMPL78je308GIeLDRm9Gb4+1P7jvPEUAPnapCT5Y=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="SoundFiles\Explosion.wav" size="292686">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>mOio08HUuZkHLgzT8y5AqxvjIXsgq75KAkrrU+BuI/Y=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="SoundFiles\Flag.wav" size="285774">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>0TlQ+I/K+Ek8dnAVPCA9/n9SaVPovRp3DllKBWEQxcA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="SoundFiles\Move.wav" size="365964">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>9v+xZk6GUL+Dom5OkLwY2NCJdAPb+mGOwzQwg3PGTCY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="SoundFiles\Start.wav" size="276558">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>eLV0uoI1Kmglhp5L2tWEr4l1aVkQ4zJXPwnTUczBIHk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="SoundFiles\Victory.wav" size="580686">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>sWbWm0xUynCZ9iVGeLIT9PjWry9vQ/fS7/HsLknkObU=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=DESKTOP-2SLBIA5\Corruption" issuerKeyHash="3763d0be14be9a2ecd8097b5e35884c0a7a69fa5" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>JBOx3wIFWDE1Hhw7kreV2ktpyS314dk++A5QuJlhYc4=</DigestValue></Reference></SignedInfo><SignatureValue>Ks650nv9/XmmuHSZD/YBeZ4S7AKAJ7LNVo9/zaCq4dPCX9RcgQefNv/yBLa+CPXFeIiHT3Qdm8z9rMl7cV1+0zkHNfCvvrQ6ahtpyF3HTDzxgBhtzAahmq0UObN0/9pRFswc0fqQ20j91DGO4LiA+iZ0/dhd9Tb+Jkh4D/pGJSA=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>wLkjY9QOYHu5iWphlB2aF3+rQBN9C1rJBJ9kxos5F3i4nGk7Z0zsOK3MAu/CQTsTVFHugCSY2OTLtRtwb9dmkZhsCumb08YcfZv54cTxR17QqgwSW2fOY69/ecPlS47ei0RyDSNmaVQhfwo29ttvpETgTQW/hi+7l8jNySzFiL0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="ce616199b8500ef83ed9e1f52dc9694bda95b7923b1c1e3531580502dfb11324" Description="" Url=""><as:assemblyIdentity name="minesweeper.exe" version="1.0.0.0" publicKeyToken="439ec42abb48072c" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-2SLBIA5\Corruption</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>SbUZTn8X30FuNYjI4t8QxeZ8aUhGbUtTtkiRizG9CMM=</DigestValue></Reference></SignedInfo><SignatureValue>GyY1SbAVb98D0TnJHgR/Mz8W5sJwyFDnghFiDthFysCprmFeqaplK40jbN4qNc3qY4wMr3U5cM2H1dxFta2+ivEQ+8PxivT+zIgSAvJQZcmmTsqH+qN+I6sxBTAsiKWb4RkuvGJvUD0rIIPQ2/Hhgp+T8EC8w/9g7Sf/KUkr/s0=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>wLkjY9QOYHu5iWphlB2aF3+rQBN9C1rJBJ9kxos5F3i4nGk7Z0zsOK3MAu/CQTsTVFHugCSY2OTLtRtwb9dmkZhsCumb08YcfZv54cTxR17QqgwSW2fOY69/ecPlS47ei0RyDSNmaVQhfwo29ttvpETgTQW/hi+7l8jNySzFiL0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIICATCCAWqgAwIBAgIQRPm6DXDWlqdIPANkJ0mGQjANBgkqhkiG9w0BAQsFADA/MT0wOwYDVQQDHjQARABFAFMASwBUAE8AUAAtADIAUwBMAEIASQBBADUAXABDAG8AcgByAHUAcAB0AGkAbwBuMB4XDTIzMDUyNjE2MTEyOFoXDTI0MDUyNTIyMTEyOFowPzE9MDsGA1UEAx40AEQARQBTAEsAVABPAFAALQAyAFMATABCAEkAQQA1AFwAQwBvAHIAcgB1AHAAdABpAG8AbjCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAwLkjY9QOYHu5iWphlB2aF3+rQBN9C1rJBJ9kxos5F3i4nGk7Z0zsOK3MAu/CQTsTVFHugCSY2OTLtRtwb9dmkZhsCumb08YcfZv54cTxR17QqgwSW2fOY69/ecPlS47ei0RyDSNmaVQhfwo29ttvpETgTQW/hi+7l8jNySzFiL0CAwEAATANBgkqhkiG9w0BAQsFAAOBgQA0tH5d+q1NohvoSxW6u9L7qV4VhxHJ/ZiCivnoDNFKORjunBnPFVsA23/ip8DdLi+XKpJ5ISHLzyqbKSCLgjuEdnO8DGwICOdG7QhLV221Ql898F3JLinjA1KewxKdBcHmuGJXTTkZBwPuOpgiPDKxaZwqa4SxsF5YgPshvGFycg==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

@@ -26,7 +26,7 @@ namespace minesweeper
             executableDirectoryPath = Path.GetDirectoryName(executableFilePath);
 
             move = new System.Media.SoundPlayer(Path.Combine(executableDirectoryPath, "SoundFiles\\Move.wav"));
-            Console.WriteLine(Path.Combine(executableDirectoryPath, "SoundFiles\\Move.wav"));
+            //Console.WriteLine(Path.Combine(executableDirectoryPath, "SoundFiles\\Move.wav"));
             kaboom = new System.Media.SoundPlayer(Path.Combine(executableDirectoryPath, "SoundFiles\\Explosion.wav"));
             dig = new System.Media.SoundPlayer(Path.Combine(executableDirectoryPath, "SoundFiles\\Dig.wav"));
             flag = new System.Media.SoundPlayer(Path.Combine(executableDirectoryPath, "SoundFiles\\Flag.wav"));
